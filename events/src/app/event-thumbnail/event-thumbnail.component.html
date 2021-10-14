@@ -1,0 +1,23 @@
+<!-- avoir mis un id permet de naviguer vers un chemin avec id et de faire des verification avec cet id
+pour savoir par exemple si on dirige vers une page error ( cas d'un id inexistant) -->
+<div class="body"  [routerLink] = "['/event', eventChild.id]">
+ <h2>{{eventChild.name}}</h2>
+    <div>Date: {{eventChild.date}}</div>
+    <div>Time: {{eventChild.time}}</div>
+    <div [hidden]= '!eventChild.description'>Description : {{eventChild.description}}</div>
+    <!-- <div>Session: {{eventChild.session.duree}}</div> -->
+    <hr>
+    <address>
+      <strong>Address: </strong>
+      <br/>
+      <i>{{eventChild.location.address}}</i>
+      <div><em>{{eventChild.location.city}}</em></div>
+    </address>
+
+    <div><strong [hidden] = '!arrayId.includes(eventChild.id)'>Vous avez selectionné cet evenement</strong></div>
+
+  </div>
+<br>
+<!-- (click) = "handleClick() -->
+
+

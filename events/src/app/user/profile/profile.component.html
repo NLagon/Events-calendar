@@ -1,0 +1,25 @@
+<h1>Edit your profile</h1>
+<hr>
+<div class="col-md-3">
+  <h3 #colorI>Modifier le profil</h3>
+  <form #form = 'ngForm' (ngSubmit)="submitEvent(form)">
+    <!-- !!!!!! form-control à ne pas oublier dans les input -->
+  <div class="form-group">
+    <label for="firstName">Firstname</label>
+  <!-- toujours mettre l'attribut name pour utiliser #variable = ngModel -->
+    <input type="text" class="form-control"  #firstName = "ngModel" id="firstName" name="firstName" ngModel>
+  </div>
+
+
+ <div class="form-group">
+  <label for="lastName">Lastname</label>
+  <input type="text" class="form-control" id="lastName" #lastName = "ngModel" name="lastName" ngModel >
+ </div>
+
+  <br>
+
+  <button type="submit" (click) = submitEvent(form) class="btn btn-primary">Sauvegarder</button>
+  <button type="button" routerLink = '/events' class="btn btn-secondary">Quitter</button>
+  </form>
+  {{form.value.firstName}}
+</div>

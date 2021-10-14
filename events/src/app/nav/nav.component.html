@@ -1,0 +1,39 @@
+<nav  class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <!-- classe active appliquée par le biais de la propriété routerLinkActive   -->
+          <!-- routerLinkActiveOptions ici permet d'activer uniquement si le chemin en entier correspond -->
+          <!-- et pas seulement le debut ce qui faisait que lors du click sur le second lien  -->
+          <!-- le premier restait activé alors qu'on avait cliqué sur le second car '/events/new' et '/event -->
+          <a class="nav-link" routerLinkActive = 'active' [routerLinkActiveOptions] = "{exact : true}" [routerLink] ="['/events']"  aria-current="page" href="#">Events</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive = 'active'  [routerLink] ="['/events/new']" href="#" >Créer un évènement</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      <form class="d-flex ">
+        <div ><a class="nav-link  nav-item" routerLinkActive = 'active' [routerLink] ="['user/profile']">Bienvenue {{firstname}}</a></div>
+      </form>
+    </div>
+  </div>
+</nav>

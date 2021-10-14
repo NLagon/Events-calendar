@@ -1,0 +1,11 @@
+<div *ngFor = "let session of sessions">
+<div class="container body">
+  <!-- |convertToLowerCase : (session.author).match(characters) -->
+<div>Auteur : {{session.author | lowercase}}</div>
+<div>Nom : {{session.nameSession}}</div>
+<div>Description : {{session.description}}</div>
+</div>
+<br>
+
+</div>
+<br>

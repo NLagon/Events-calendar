@@ -1,0 +1,10 @@
+/* rendre la chose encore plus specifique en ajoutant le selecteur li =>avoir plus de poids
+et ne pas se faire ecrasé par bootstrap */
+/* ici le "||" est symbolise par la virgule */
+ div > a.nav-link.active, li > a.nav-link.active{
+  color: orange  ;
+}
+
+a{
+  color: black;
+}

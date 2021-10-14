@@ -1,0 +1,22 @@
+<!-- Partie utilisant @Output() étant eventClick   -->
+<!-- (eventClick) = "handleEventClicked($event)" -->
+<h1 [ngStyle] = " {
+  'color' : flag ? colorTrue : colorFalse,
+  'background-color' : 'blue'
+}">Evenements à venir</h1>
+<hr>
+<div class="row "> <!--  la clase bootstrap "row" -->
+  <div *ngFor = "let event of events" class="col-md-4">
+    <!-- on peut reprendre la variable event et l'utiliser  -->
+   <app-event-thumbnail  [eventChild] = "event"></app-event-thumbnail>
+    <!-- <app-event-details [eventDetail] = "event" ></app-event-details> -->
+  </div>
+  <form >
+    <label  for="lb">Label</label>
+    <input type="text" [(ngModel)] = "testNgModel" id="lb">
+  </form>
+  <p>{{testNgModel}}</p>
+</div>
+    <!-- *ngFor =   'let event of events' -->
+<!-- #data -->
+<!-- <p>Here the data from child using template variable: <strong>{{data.dataTransfered()}}</strong></p> -->

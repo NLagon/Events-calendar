@@ -1,0 +1,34 @@
+
+    <button  [hidden] ="hideAddMessage" (click)  = "sessionAppears()">Ajouter une session</button>
+
+  <br>
+  <br>
+  <br>
+
+<div [hidden] = 'hiddenForm' class="container">
+
+   <!-- Grosse erreur de ne pas avoir mis le bouton entre entre les balises form -->
+   <form #form="ngForm" (ngSubmit)="submitEvent(form.value)">
+
+    <!-- !!!!!! form-control à ne pas oublier dans les input -->
+   <div class="form-group col-md-2">
+   <label for="author">Auteur</label>
+  <!-- toujours mettre l'attribut name pour utiliser #variable = ngModel -->
+   <input type="text" class="form-control"  #author = "ngModel" id="author" name="author" ngModel>
+   </div>
+
+
+  <div class="form-group col-md-2">
+  <label for="nameSession">Nom</label>
+  <input type="text" class="form-control" id="nameSession" #nameSession = "ngModel" name="nameSession" ngModel>
+  </div>
+  <br>
+
+  <button type="submit"  class="btn btn-warning" >Ajouter la session</button>
+  <button (click) = 'hideForm()' type="button" class = "btn btn-light">Annuler</button>
+  <!-- (click) = 'cancel(form)' -->
+  </form>
+
+  <p>{{form.value|json}}</p>
+</div>
+<br>

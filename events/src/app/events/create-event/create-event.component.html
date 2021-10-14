@@ -1,0 +1,28 @@
+<div class="container">
+<h4>Create event</h4>
+
+  <!-- Grosse erreur de ne pas avoir mis le bouton entre entre les balises form -->
+  <form #form = "ngForm" (ngSubmit)="submitEvent(form)">
+
+  <!-- !!!!!! form-control à ne pas oublier dans les input -->
+ <div class="form-group col-md-2">
+ <label for="eventName">Event Name</label>
+<!-- toujours mettre l'attribut name pour utiliser #variable = ngModel -->
+ <input type = "text" class="form-control"  #event = "ngModel" id="eventName" name="event" ngModel>
+ </div>
+
+
+<div class="form-group col-md-2">
+<label for="dureeSession">Duree de la session</label>
+<input type="text" class="form-control" id="dureeSession" #duree = "ngModel" name="duree" ngModel>
+</div>
+<br>
+
+<button type="submit"  class="btn btn-warning" >Ajouter un evenement</button>
+<button type="button" class = "btn btn-light"  (click) = 'cancel(form)'  >Annuler</button>
+</form>
+
+{{form.value.duree}}
+</div>
+
+

@@ -1,0 +1,53 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-11">
+    <h2>{{eventDetail?.name}}</h2>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-6">
+    <div><strong>Date: </strong>{{eventDetail?.date}}</div>
+    <div><strong>Time: </strong>{{eventDetail?.time}}</div>
+    <div><strong>Price: </strong>{{eventDetail?.price}}</div>
+  </div>
+  <div class="col-md-6">
+    <address>
+        <strong>Adresse:</strong><br>
+        {{eventDetail?.location.address}}<br/>
+        {{eventDetail?.location.city}}
+    </address>
+  </div>
+</div>
+
+  <hr>
+
+  <h2>Sessions</h2>
+
+  <div class="col-md-2">
+
+    <!-- Grosse erreur de ne pas avoir mis le bouton entre entre les balises form -->
+    <form #form ngForm>
+
+      <!-- !!!!!! form-control à ne pas oublier dans les input -->
+    <div class="form-group">
+    <label for="sessionAuthor">Auteur</label>
+    <!-- toujours mettre l'attribut name pour utiliser #variable = ngModel -->
+    <input type="text" class="form-control"  #sessionAuthor ngModel [(ngModel)] = 'author' id="sessionAuthor" name="sessionAuthor" ngModel>
+    </div>
+
+   </form>
+
+
+</div>
+<br>
+
+  <app-session-list  [sessions] = filteredSessions></app-session-list>
+
+  <button class="a" (click) = 'eventEmitting()' type="submit">Sélectionner cet evenement</button>
+
+
+  <div><create-session [id] = 'eventDetail.id'></create-session></div>
+
+</div>
